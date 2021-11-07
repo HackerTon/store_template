@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import React, { useState, useEffect } from 'react';
 import Pic1 from './karaageteriyakimayo.jpeg';
 import Pic2 from './surimiscallop.jpeg';
@@ -25,7 +27,11 @@ const App = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-1 place-items-center pt-5 gap-5 pb-5">
+      <div className="py-5 bg-yellow-200">
+        <div className="pl-5 text-2xl font-semibold">Shop name</div>
+        <div className="pl-5 text-sm font-light">Hello</div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 place-items-center pt-5 gap-5 pb-5">
         <Box
           index={0}
           picture={Pic1}
@@ -164,7 +170,7 @@ const Box = (props: {
 
   return (
     <div className="grid grid-cols-1 bg-yellow-300 pt-5 px-5 rounded-sm shadow-md pb-5">
-      <img src={picture} width={225} height={225} />
+      <img src={picture} className="square max-w-{}" />
       <p className="font-bold text-2xl pt-2">RM{price}</p>
       <p className="font-semibold text-lg">{name}</p>
       <button
